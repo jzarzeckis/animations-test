@@ -1,0 +1,16 @@
+.App {
+  height: 100%;
+}
+
+.App .container {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+  position: relative;
+}
+
+.App .container > * {
+  backface-visibility: hidden;
+}
