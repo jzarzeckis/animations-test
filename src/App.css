@@ -9,8 +9,6 @@
   align-content: center;
   flex-direction: row;
   position: relative;
-}
-
-.App .container > * {
-  backface-visibility: hidden;
+  perspective: 600px;
+  overflow: hidden;
 }

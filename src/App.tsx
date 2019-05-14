@@ -8,8 +8,8 @@ const App: React.FC = () => {
   const [ isOpen, setOpenState ] = useState(false);
   return (<div className="App">
     <div className={`container ${isOpen ? "open" : "closed"}`}>
-      <Button onClick={() => setOpenState(!isOpen)}></Button>
-      <MovableRectApp></MovableRectApp>
+      <Button onClick={() => setOpenState(true)}></Button>
+      <MovableRectApp hide={() => setOpenState(false)}></MovableRectApp>
     </div>
   </div>);
 };
