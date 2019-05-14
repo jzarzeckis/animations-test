@@ -16,3 +16,13 @@
 .container.open .mvApp {
   transform: rotateY(360deg);
 }
+
+.mvApp .grayRect {
+  width: 30%;
+  height: 15%;
+  background: pink;
+  cursor: grab;
+  border: solid 1px rgb(170, 199, 242);
+  background-image: linear-gradient(rgb(204, 206, 210), rgb(186, 186, 186));
+  box-shadow: 4px 4px 13px rgba(0, 0, 0, 0.5);
+}
