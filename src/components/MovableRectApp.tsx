@@ -3,13 +3,28 @@ import { IPos } from "../types";
 
 import "./MovableRectApp.css";
 
+function scaleFromCoords(y: number) {
+  const minScale = 0.5;
+  const maxScale = 1;
+  const areaTop = 100;
+  const areaBottom = 200;
+
+  if (y > areaBottom) {
+    return maxScale;
+  } else if (y > areaTop) {
+    return minScale + (y - areaTop) / (areaBottom - areaTop) * (maxScale - minScale);
+  } else {
+    return minScale;
+  }
+}
+
 export const MovableRectApp: React.FC<{ hide: () => void }> = ({ hide }) => {
   const [ coords, setCoords ] = useState<IPos>({ x: 100, y: 100 });
   return (<div onClick={hide} className="mvApp">
     <div
       className="grayRect"
       style={{
-        transform: `translate(${coords.x}px, ${coords.y}px)`,
+        transform: `translate(${coords.x}px, ${coords.y}px) scale(${scaleFromCoords(coords.y)})`,
       }}
       onClick={(e) => e.stopPropagation()}
       onMouseDown={(mDownEv) => {
